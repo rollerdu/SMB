@@ -1,0 +1,116 @@
+<include file="Public/header" title="胸带程序版本管理" />
+<article class="page-container">
+    <form class="form form-horizontal">
+        <div style="text-align: center">
+                <h3>当前版本信息</h3>
+        </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3">版本编号：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="border: none" class="input-text" placeholder="" id="uversion" name="uversion" value="{$detail.uversion}">
+        </div>
+    </div>
+    <div class="row cl">
+    <label class="form-label col-xs-4 col-sm-3">版本签名：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+        <input type="text" style="border: none" class="input-text" placeholder="" id="ufilemd5" name="ufilemd5" value="{$detail.ufilemd5}">
+    </div>
+</div>
+    <div class="row cl">
+    <label class="form-label col-xs-4 col-sm-3">版本下载：</label>
+    <div class="formControls col-xs-8 col-sm-9">
+        <input type="text" style="border: none" class="input-text" placeholder="" id="ufileurl" name="ufileurl" value="{$detail.ufileurl}">
+    </div>
+</div>
+    </form>
+	<form class="form form-horizontal" id="form-admin-add" action="{:U('Index/girdle')}" method="post">
+        <div class="row cl" style="margin:50px 25%;text-align: center">
+            <div class="col-md" >
+                <input id="file-fr" name="hex" type="file"  multiple="true" class="file-loading">
+                <div id="errorBlock" class="help-block"></div>
+            </div>
+        </div>
+	<div class="row cl">
+		<div style="text-align: center">
+            <input type="hidden" value="{$detail.id}" name="id" />
+			<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+		</div>
+	</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
+
+<!--/_footer /作为公共模版分离出去-->
+
+<!-- 上传图片插件 -->
+<script src="__PUBLIC__/admin/js/bootstrap.js"></script>
+<script src="__PUBLIC__/admin/js/fileinput.min.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/admin/css/fileinput.min.css">
+<script src="__PUBLIC__/admin/js/fileinput_locale_zh.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+        $("#form-admin-add").validate({
+            rules:{
+                title:{
+                    required:true,
+                },
+
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                $(form).ajaxSubmit({
+                    success:function(data){
+                        if(data.status == 1){
+                            layer.msg(data.info, {icon:6,time:1000});
+                            setTimeout(function(){
+                                location.reload();
+                            },2000);
+                        }else{
+                            layer.msg(data.info, {icon:6,time:1000});
+                        }
+                    }
+                });
+            }
+        });
+
+        $(document).on('ready', function() {
+            $("#file-fr").fileinput({
+                showRemove: false,
+                showCaption: false,
+                showUpload: false,
+                language: 'zh',
+                allowedPreviewTypes: ['hex'],
+                allowedFileExtensions: ['hex'],
+                browseLabel: "上传HEX文件",
+//                initialPreview:file,
+                initialPreviewConfig: [
+                    {caption: "", size: '', width: "", key: 1,showDelete: false}
+                ],
+                initialPreviewAsData: true,
+                overwriteInitial: true,
+                deleteUrl: false
+            });
+        });
+
+    });
+//    var ue = UE.getEditor('editor');
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

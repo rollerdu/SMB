@@ -1,0 +1,163 @@
+﻿<include file="Public/header" title="区域经理列表" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 业务管理 <span class="c-gray en">&gt;</span> 区域经理管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		<input type="text" class="input-text" style="width:250px" placeholder="输入区域经理账号或邮箱" value="{$title}" id="username">
+		<button type="button" class="btn btn-success" onclick="btn_search()" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a href="javascript:;"  onclick="attachment('分配代理商')" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe653;</i> 分配代理商</a>
+		<a href="javascript:;" onclick="admin_add('添加区域经理','{:U('Manager/add')}','1000','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加区域经理</a></span> <span class="r">共有数据：<strong>{$count}</strong> 条</span> </div>
+	<table class="table table-border table-hover table-bordered table-bg">
+		<thead>
+			<tr class="text-c">
+				<th width="40">ID</th>
+				<th width="45">选择</th>
+				<th width="150">登录账号</th>
+				<th width="90">姓名</th>
+				<th width="115">手机号</th>
+				<th width="190">邮箱</th>
+				<th width="190">下属代理商</th>
+				<th width="80">登陆次数</th>
+				<th width="90">登陆IP</th>
+				<th width="170">加入时间</th>
+				<th width="60">状态</th>
+				<th width="80">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<foreach name="member" item="v">
+			<tr class="text-c">
+				<td>{$v.id}</td>
+				<td><input type="radio" name="attach_id" class="radio" value="{$v.id}" /></td>
+				<td>{$v.name}</td>
+				<td>{$v.truename}</td>
+				<td>{$v.mobile}</td>
+				<td>{$v.email}</td>
+				<td><volist name="v['agents']" id="ag">
+					{$ag.truename|default=$ag['name']} &nbsp;&nbsp;
+				</volist></td>
+				<td>{$v.login_times}</td>
+				<td>{$v.login_ip}</td>
+				<td>{$v.ctime}</td>
+				<td class="td-status{$v.id}">
+                    <if condition="$v.status eq 1">
+                        <span class="label label-success radius">已启用</span>
+                        <else/>
+                        <span style="color:red">
+                            <span class="label radius">已停用</span>
+                        </span>
+                    </if>
+                </td>
+				<td class="td-manage{$v.id}">
+                    <if condition="$v.status eq 1">
+                    <a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',1)" title="停用">
+                        <i class="Hui-iconfont">&#xe631;</i>
+                    </a>
+                        <else/>
+                        <a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',0)" title="启用">
+                            <i class="Hui-iconfont">&#xe615;</i>
+                        </a>
+                        </if>
+                    <a title="编辑" href="javascript:;" onclick="admin_edit('区域经理编辑','{:U("Manager/edit",array("id"=>$v["id"]))}','1000','500')" class="ml-5" style="text-decoration:none">
+                        <i class="Hui-iconfont">&#xe6df;</i>
+                    </a>
+                    <!--<a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')" class="ml-5" style="text-decoration:none">-->
+                        <!--<i class="Hui-iconfont">&#xe6e2;</i>-->
+                    <!--</a>-->
+                </td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+{$page}
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+/*
+	参数解释：
+	title	标题
+	url		请求的url
+	id		需要操作的数据id
+	w		弹出层宽度（缺省调默认值）
+	h		弹出层高度（缺省调默认值）
+*/
+/*区域经理-增加*/
+function admin_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+function btn_search(){
+    var username = $("#username").val();
+    window.location.href="{:U('Manager/index')}?title="+username;
+}
+/*区域经理-删除*/
+//function admin_del(obj,id){
+//	layer.confirm('确认要删除吗？',function(index){
+//		//此处请求后台程序，下方是成功后的前台处理……
+//        var URL = "{:U('Manager/delete')}";
+//        $.get(URL,{id:id},function(data){
+//            if(data.status == 1){
+//                $(obj).parents("tr").remove();
+//                layer.msg('已删除!',{icon:1,time:1000});
+//            }else{
+//                layer.msg(data.info,{icon:1,time:1000});
+//            }
+//        });
+//	});
+//}
+function attachment(title){
+    var id = $("input[type=radio]:checked").val();
+    if(!parseInt(id)){
+        layer.msg('请选择一个账号！',{icon: 5,time:1000});
+        return false;
+    }
+    var index = layer.open({
+        type: 2,
+        title: title,
+        content: '{:U("Manager/attach")}'+'?id='+id,
+    });
+    layer.full(index);
+
+}
+/*区域经理-编辑*/
+function admin_edit(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*区域经理-停用*/
+function admin_stop(obj,id,status){
+	if(status == 1){
+		var msg = '确认要停用吗？';
+	}else{
+		var msg = '确认要启用吗？';
+	}
+	layer.confirm(msg,function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		var url = "{:U('Manager/upstatus')}";
+        $.get(url,{id:id},function(data){
+            if(data.status == 1){
+                if(status == 1){
+                    $(obj).remove();
+                    $(".td-manage"+id+"").prepend('<a onClick="admin_stop(this,'+id+',0)" href="javascript:;" title="启用" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+                    $(".td-status"+id+"").html('<span class="label radius">已停用</span>');
+                    layer.msg('已停用!',{icon: 5,time:1000});
+                }else{
+                    $(obj).remove();
+                    $('.td-manage'+id+'').prepend('<a onClick="admin_stop(this,'+id+',1)" href="javascript:;" title="停用" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+                    $(".td-status"+id+"").html('<span class="label label-success radius">已启用</span>');
+                    layer.msg('已启用!', {icon: 6,time:1000});
+                }
+            }else{
+                layer.msg(data.info,{icon: 5,time:1000});
+            }
+        });
+
+	});
+}
+
+</script>
+<include file="Public/footer" />

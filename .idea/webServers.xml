@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b80e7723-9d12-4bf3-8c25-c16f87e3c00f" name="睡眠宝" url="http://115.28.172.162">
+        <fileTransfer host="115.28.172.162" port="22" accessType="SFTP" password="dff2dfe3dfffdfd3dfcbdfc4df9fdf92df9fdf92df9fdf92" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

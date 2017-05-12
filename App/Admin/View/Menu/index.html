@@ -1,0 +1,62 @@
+<include file="Public/header" title="后台菜单管理" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 菜单管理 <a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container" style="padding-top: 0px;">
+	<!--<div class="text-c">-->
+		<!--<input type="text" name="" id="" placeholder="菜单名称、id" style="width:250px" class="input-text">-->
+		<!--<button name="" id="" class="btn btn-success" type="button"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>-->
+	<!--</div>-->
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;"  onclick="dataSort()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe675;</i> 批量排序</a> <a class="btn btn-primary radius" onclick="system_category_add('添加菜单','{:U('Menu/add')}')" href="javascript:void(0);"><i class="Hui-iconfont">&#xe600;</i> 添加菜单</a></span> <!--<span class="r">共有数据：<strong>54</strong> 条</span>--></div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<thead>
+				<tr class="text-c">
+					<th>排序</th>
+					<th>ID</th>
+					<th>应用</th>
+					<th>菜单名称</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+            <form class="js-ajax-form" action="{:U('Menu/listorders')}" method="post">
+			{$categorys}
+            </form>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+//$('.table-sort').dataTable({
+//	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+//	"bStateSave": true,//状态保存
+//	"aoColumnDefs": [
+//	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+//	  {"orderable":false,"aTargets":[0,4]}// 制定列不参与排序
+//	]
+//});
+/*系统-菜单-添加*/
+function system_category_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*系统-菜单-编辑*/
+function system_category_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+/*系统-菜单-删除*/
+function system_category_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$(obj).parents("tr").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+	});
+}
+    function dataSort(){
+        $('.js-ajax-form').submit();
+    }
+</script>
+<include file="Public/footer" />

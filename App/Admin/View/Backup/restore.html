@@ -1,0 +1,76 @@
+﻿<include file="Public/header" title="备份列表" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 数据管理 <span class="c-gray en">&gt;</span> 备份列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<table class="table table-border table-bordered table-bg">
+		<thead>
+			<tr class="text-c">
+				<th width="150">备份名称</th>
+				<th width="90">文件大小</th>
+				<th width="190">备份时间</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<foreach name="backups" item="val">
+			<tr class="text-c">
+				<td class="expander" name="{$val.name}"><i class="Hui-iconfont Hui-iconfont-gengduo2"  style="cursor: pointer"></i> {$val.name}</td>
+				<td>{$val.total_size}KB</td>
+				<td>{$val.date_str}</td>
+				<td class="td-manage{$v.id}">
+                    <!--<a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','{:U("Member/update",array("id"=>$v["id"]))}','1000','500')" class="ml-5" style="text-decoration:none">-->
+                        <!--<i class="Hui-iconfont">&#xe6df;</i>-->
+                    <!--</a>-->
+                    <a title="删除" href="javascript:;" onclick="admin_del(this,'{$val[name]}')" class="ml-5" style="text-decoration:none">
+                        <i class="Hui-iconfont">&#xe6e2;</i>
+                    </a>
+                </td>
+			</tr>
+			<volist name="val['vols']" id="vol">
+				<tr parent="{$val.name}" class="text-c hide">
+					<td>{$vol.file}</td>
+					<td>{$vol.size}kb</td>
+					<td>{$val.date_str}</td>
+					<td>
+						<a href="{:U('Admin/backup/download', array('backup'=>$val['name'], 'file'=>$vol['file']))}">下载</a>
+					</td>
+				</tr>
+			</volist>
+			</foreach>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+	$(function(){
+		$('.expander').click(function(){
+            if($(this).children('i').hasClass('Hui-iconfont-gengduo2')){
+                $(this).children('i').removeClass('Hui-iconfont-gengduo2').addClass('Hui-iconfont-shenhe-tingyong');
+                $('tr[parent="'+$(this).attr('name')+'"]').removeClass('hide').show();
+            }else{
+                $(this).children('i').removeClass('Hui-iconfont-shenhe-tingyong').addClass('Hui-iconfont-gengduo2');
+                $('tr[parent="'+$(this).attr('name')+'"]').hide();
+            }
+        });
+	})
+function admin_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+        var URL = "{:U('backup/del_backup')}";
+        $.get(URL,{backup:id},function(data){
+            if(data.status == 1){
+                $(obj).parents("tr").remove();
+                layer.msg('已删除!',{icon:1,time:1000});
+            }else{
+                layer.msg(data.info,{icon:1,time:1000});
+            }
+        });
+	});
+}
+
+</script>
+<include file="Public/footer" />

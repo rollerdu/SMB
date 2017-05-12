@@ -1,0 +1,94 @@
+﻿<include file="Public/header" title="广告列表" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 广告管理 <span class="c-gray en">&gt;</span> 广告列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<table class="table table-border table-bordered table-bg">
+		<thead>
+			<tr class="text-c">
+				<th width="40">ID</th>
+				<th width="150">标题</th>
+				<th width="150">广告图</th>
+				<th width="60">状态</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<foreach name="list" item="v">
+			<tr class="text-c">
+				<td>{$v.id}</td>
+				<td>{$v.title}</td>
+				<td><img src="{$v.picurl}" width="80"/></td>
+				<td class="td-status{$v.id}">
+                    <if condition="$v.status eq 1">
+                        	<span class="label label-success radius">已上架</span>
+                        <else />
+							<span style="color:red">
+								<span class="label radius">已下架</span>
+							</span>
+                    </if>
+                </td>
+				<td class="td-manage{$v.id}">
+                    <if condition="$v.status eq 0">
+                    <a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',1,'上架')" title="上架">
+                        <i class="Hui-iconfont">&#xe631;</i>
+                    </a>
+						<else />
+						<a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',0,'下架')" title="下架">
+							<i class="Hui-iconfont">&#xe615;</i>
+						</a>
+                    </if>
+                    <a title="编辑" href="javascript:;" onclick="admin_edit('广告编辑','{:U("/admin/Index/adadd",array("id"=>$v["id"]))}','1000','500')" class="ml-5" style="text-decoration:none">
+                        <i class="Hui-iconfont">&#xe6df;</i>
+                    </a>
+                    <!--<a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')" class="ml-5" style="text-decoration:none">-->
+                        <!--<i class="Hui-iconfont">&#xe6e2;</i>-->
+                    <!--</a>-->
+                </td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+    /*-编辑*/
+    function admin_edit(title,url,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*商品上下架*/
+    function admin_stop(obj,id,status,tit){
+        layer.confirm('确认要'+tit+'吗？',function(index){
+            //此处请求后台程序，下方是成功后的前台处理……
+            var url = "{:U('Index/adstatus')}";
+            $.get(url,{id:id,to:status},function(data){
+                if(data.status == 1){
+                    if(status == 0){
+                        $(obj).remove();
+                        $(".td-manage"+id+"").prepend('<a onClick="admin_stop(this,'+id+',1,'+"'上架'"+')" href="javascript:;" title="上架" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+                        $(".td-status"+id+"").html('<span class="label radius">已下架</span>');
+                        layer.msg('已下架!',{icon: 5,time:1000});
+                    }else{
+                        $(obj).remove();
+                        $('.td-manage'+id+'').prepend('<a onClick="admin_stop(this,'+id+',0,'+"'下架'"+')" href="javascript:;" title="下架" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+                        $(".td-status"+id+"").html('<span class="label label-success radius">已上架</span>');
+                        layer.msg('已上架!', {icon: 6,time:1000});
+                    }
+                }else{
+                    layer.msg(data.info,{icon: 5,time:1000});
+                }
+            });
+
+        });
+    }
+
+</script>
+<include file="Public/footer" />

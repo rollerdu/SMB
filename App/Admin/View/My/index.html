@@ -1,0 +1,66 @@
+﻿<include file="Public/header" title="我的资料" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 个人资料
+    <span class="c-gray en">&gt;</span>
+    我的信息
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<div class="cl pd-5 bg-1 bk-gray">
+    <span class="l">
+        <a class="btn btn-primary radius" href="javascript:;" onclick="admin_add('修改我的资料','{:U('My/edit')}','800')">
+            <i class="Hui-iconfont">&#xe647;</i>修改我的资料
+        </a>
+    </span>
+ </div>
+
+<article class="page-container">
+	<form  class="form form-horizontal" id="form-admin-role-add">
+		<div class="tabBar cl"><span>个人资料</span></div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">姓名：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:left">
+				{$user.truename}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">账号：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:left">
+                {$user.name}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">手机号：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:left">
+                {$user.mobile}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">邮箱：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:left">
+                {$user.email}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:left">
+                {$user.remark}
+			</div>
+		</div>
+	</form>
+</article>
+
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    /*管理员-增加*/
+    function admin_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

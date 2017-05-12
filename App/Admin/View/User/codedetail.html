@@ -1,0 +1,114 @@
+﻿<include file="Public/header" title="SmartCode报告详情" />
+
+<article class="page-container">
+	<form  class="form form-horizontal" id="form-admin-role-add">
+		<!--<div class="tabBar cl"><span>个人资料</span></div>-->
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">SmartCode：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.smartcode}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">24小时内使用至少4小时（不用连续）的天数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.percentdaysatleastxhours}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">日计数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.daycount}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">至少使用4小时的天数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.daysatleastxhours}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">第 95 百分位压力值：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.percentilepressure95th}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">第 90 百分位压力值：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.percentilepressure90th}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">呼吸暂停/呼吸不足指数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.ahi}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">平台压力时间：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.pressureplateautime}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">高楼器流量时间：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.leaktime}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">非梗阻指数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.noi}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">呼气膨胀指数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.epi}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">呼吸机吸气：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.percentilemachineinspiration}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">呼吸机呼气：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.percentilemachineexpiration}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">依从性得分：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+				{$detail.adherencescore}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">最小使用量阈值：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+				{$detail.minimumusethreshold}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">呼吸期间使用的时数：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.whilebreathinghours}
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">滴定模式：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+				{$detail.titrationmode}
+			</div>
+			<label class="form-label col-xs-4 col-sm-3">创建时间：</label>
+			<div class="form-label col-xs-2 col-sm-3" style="text-align:center">
+                {$detail.ctime}
+			</div>
+		<div class="row cl">
+
+		</div>
+	</form>
+</article>
+
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    /*管理员-增加*/
+    function admin_add(title,url,w,h){
+        layer_show(title,url,w,h);
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

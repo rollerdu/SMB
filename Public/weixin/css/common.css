@@ -1,0 +1,195 @@
+body {
+    background: #f0f0f0;
+}
+
+.container.info {
+    padding: 0 5px;
+    margin-top: 5px;
+}
+
+.container.info .table-striped {
+    background: #fff;
+}
+
+.container.wrap .table-striped>thead, .container.info .table-striped>thead {
+    border-bottom: 2px solid #f0f0f0;
+    color: #606464;
+}
+
+.container.info .table>thead>tr>th {
+    font-size: 0;
+}
+
+.container.info .table>thead>tr>th div:first-child {
+    text-align: center;
+}
+
+.container.info .table>thead>tr>th div:nth-child(2) {
+    text-align: right;
+    padding-right: 5px;
+}
+
+.container.info .table>thead>tr>th div {
+    display: inline-block;
+    width: 50%;
+    font-size: 13px;
+    padding-top: 6px;
+    font-weight: 500;
+}
+
+.container.info .table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #c3dbff;
+}
+
+.container.info .table-striped>tbody>tr.last-two, .container.info .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+.container.info .table-striped>tbody>tr:last-child {
+    background-color: #c3dbff;
+}
+
+.container.wrap .table-striped>thead, .container.info .table-striped>tbody>tr.header {
+    background-color: #5085d3;
+}
+
+.container.wrap .table-striped>thead tr th, .container.info .table-striped>tbody>tr td, .container.info .table-striped>tbody>tr th, .container.info .table>thead>tr>th {
+    padding: 0;
+    text-align: center;
+    border: none;
+    line-height: 16px;
+}
+
+.container.info .table-striped>tbody th {
+    font-weight: 600;
+    font-size: 12px;
+    border-right: 1px solid #fff!important;
+}
+
+.container.info .table-striped>tbody>tr td {
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.last-day {
+    color: #fff;
+    line-height: 18px;
+}
+
+.navbar {
+    text-align: center;
+    height: 40px;
+    min-height: 40px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#B80B27), to(#d51f36));
+}
+
+.back.navbar-brand {
+    height: 40px;
+    background: url('../images/left.png') no-repeat center center;
+    background-size: 26px 22px;
+    ;
+    margin-left: 5px;
+}
+
+.navbar-brand.title {
+    float: none;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 24px;
+    line-height: 40px;
+    height: 40px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.navbar-brand.home {
+    float: right;
+    height: 40px;
+    background: url('../images/1.png') no-repeat center center;
+    background-size: 18px 16px;
+    margin-right: 5px;
+}
+
+input.form-control.username {
+    background-color: #ffffff;
+    background-image: url('../images/user.png');
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 18px 20px;
+    padding-left: 30px;
+}
+
+input.form-control.password {
+    background-color: #ffffff;
+    background-image: url('../images/password.png');
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 18px 20px;
+    padding-left: 30px;
+}
+
+.login-btn {
+    background-color: #da233a;
+    color: #fff;
+    font-size: 24px;
+}
+
+.login-btn.btn:hover, .login-btn.btn:focus, .login-btn.btn.focus {
+    color: #fff;
+}
+
+.alert {
+    display: none;
+    padding: 0;
+}
+
+.container.wrap .table-striped>thead tr th {
+    color: #fff;
+    line-height: 44px;
+}
+
+.container.wrap .table-striped>tbody tr th, .container.wrap .table-striped>tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container.wrap .table-striped>tbody>tr {
+    background-color: #f9f9f9;
+}
+
+.loading-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.loading.panel {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.loading.panel .panel-title
+{
+    border-bottom: .025rem solid #ddd;
+    padding:0 0 10px 0;
+    text-align: left;
+    color:#ff0000;
+}
+
+.loading.panel .panel-body div{
+    display: inline-block;
+    margin-right: 20px;
+}
+.loading.panel .panel-body a{
+    color: #ff0000;
+    margin-left: 5px;
+    text-decoration: underline;
+}
+@media (min-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+}

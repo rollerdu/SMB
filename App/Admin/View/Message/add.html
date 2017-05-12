@@ -1,0 +1,119 @@
+﻿<include file="Public/header" title="添加消息" />
+<article class="page-container">
+    <form class="form form-horizontal" id="form-article-add" action="{:U('Message/add')}" method="post">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>消息名称：</label>
+            <div class="formControls col-xs-8 col-sm-8">
+                <input type="text" class="input-text" value="" placeholder="" name="title">
+            </div>
+        </div>
+        <div class="row cl" style="margin-left: 17%;">
+            <div class="col-md" >
+                <input id="file-fr" name="image" type="file"  multiple="true" class="file-loading">
+                <div id="errorBlock" class="help-block"></div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>内容：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="content" cols="" rows="" class="textarea"  placeholder="200个字符以内" dragonfly="true" onKeyUp="textarealength(this,200)"></textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-8 col-xs-offset-4 col-sm-offset-3">
+                <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+    </form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
+<!-- 上传图片插件 -->
+<script src="__PUBLIC__/admin/js/bootstrap.js"></script>
+<script src="__PUBLIC__/admin/js/fileinput.min.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/admin/css/fileinput.min.css">
+<script src="__PUBLIC__/admin/js/fileinput_locale_zh.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("select[name=cate_id]").change(function(){
+            var cart_id = $(this).val();
+            if(cart_id == 3){
+                $("#invent").text('胸带使用次数：').parent().show();
+                $("#inventory").attr('name','usage_count');
+            }else if(cart_id == 4){
+                $("#invent").parent().hide();
+            }else{
+                $("#invent").text('库存量：').parent().show();
+                $("#inventory").attr('name','inventory');
+            }
+        });
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+        $("#form-article-add").validate({
+            rules:{
+                title:{
+                    required:true,
+                },
+                content:{
+                    required:true,
+                },
+
+            },
+            onkeyup:false,
+            focusCleanup:true,
+            success:"valid",
+            submitHandler:function(form){
+                $(form).ajaxSubmit({
+                    success:function(data){
+                        layer.msg(data.info, {icon:6,time:1000});
+                        if(data.status == 1){
+//                        setTimeout("parent.layer.close(parent.layer.getFrameIndex(window.name));",2000);
+                            setTimeout(function(){
+                                parent.location.reload();
+                            },2000);
+                        }
+                    }
+                });
+            }
+        });
+
+        $('#file-fr').fileinput({
+            showUpload : false,
+            showRemove : false,
+            showCaption: false,
+            browseLabel: "上传图片",
+            language : 'zh',
+            allowedPreviewTypes : [ 'image' ],
+            allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+            dropZoneEnabled: false,  //是否显示拖拽区域
+            maxFilePreviewSize: 10240
+
+
+        })
+
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

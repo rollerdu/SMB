@@ -1,0 +1,23 @@
+<ul class="nav navbar-nav side-nav">
+	<li><a href="{:U('index/index')}"><i class="fa fa-dashboard"></i> 仪表盘</a></li>
+	<volist name="menu" id="vo">
+		<li class="dropdown ">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-{$vo.icon}"></i> {$vo.name}<b class="caret"></b></a>
+			<ul class="dropdown-menu" id="leftmenu">
+				<volist name="vo['items']" id="it">
+					<li><a href="{$it.url}" action="{$it.model}" <if condition="$it.model eq $action"> style="color:#3C8DBC;"</if>><i class="glyphicon glyphicon-{$it.icon}"></i> {$it.name}</a></li>
+				</volist>
+			</ul>
+		</li>
+	</volist>
+</ul>
+
+<script type="text/javascript">
+var action = "{$action}";
+jQuery(function($){
+
+
+});
+
+
+</script>

@@ -1,0 +1,21 @@
+{
+    "user": "username",
+    "state":true,
+    "update_time":1489288731507,
+    "userinfo": {
+        "least_4_hours": 1,
+        "all_day": 1,
+        "exceed_4_hours": 100,
+        "pressure_95th": 11,
+        "pressure_90th": 11,
+        "ahl": 9.5,
+        "plateau_time": "11%",
+        "flow_time": "0%",
+        "nrl": 0.5,
+        "epl": 10,
+        "smart_code": "F1NH-FA3-5GRG",
+        "breathing_hours": "0",
+        "titration_mode":"AutoAdjust",
+        "mini_time":"4Hours"
+    }
+}

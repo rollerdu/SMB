@@ -1,0 +1,40 @@
+<include file="Public/header" title="Reviews" />
+<div class="review">
+	 <div class="container">
+		 <h2>Reviews</h2>
+		 <div class="review-sec">
+             <for start="0" end="count($data)" step="2">
+			 <div class="review-grids">
+				 <div class="col-md-6 revw">
+					 <div class="rft-grid">
+						 <div class="col-md-5 rft-pic">
+							 <a href="{:U('Index/single',array('id'=>$data[$i]['id']))}"><img src="__PUBLIC__/Home/images/g7.jpg" class="img-responsive" alt=""/></a>
+						 </div>
+						 <div class="col-md-7 rft-pic-info">
+							  <h4><a href="{:U('Index/single',array('id'=>$data[$i]['id']))}">{$data[$i]['title']}</a></h4>
+							 <p>{$data[$i]['intro']}</p>
+						 </div>
+						 <div class="clearfix"></div>
+					 </div>
+				 </div>
+                 <if condition="$data[$i+1] neq null">
+				 <div class="col-md-6 revw">
+					 <div class="rft-grid">
+						 <div class="col-md-5 rft-pic">
+							 <a href="{:U('Index/single',array('id'=>$data[$i+1]['id']))}"><img src="__PUBLIC__/Home/images/g8.jpg" class="img-responsive" alt=""/></a>
+						 </div>
+						 <div class="col-md-7 rft-pic-info">
+							  <h4><a href="{:U('Index/single',array('id'=>$data[$i+1]['id']))}">{$data[$i+1]['title']}</a></h4>
+							 <p>{$data[$i+1]['intro']}</p>
+						 </div>
+						 <div class="clearfix"></div>
+					 </div>
+				 </div>
+                 </if>
+				 <div class="clearfix"></div>
+			 </div>
+             </for>
+		 </div>
+	 </div>
+</div>
+<include file="Public/footer"  />

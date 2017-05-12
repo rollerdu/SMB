@@ -1,0 +1,120 @@
+﻿<include file="Public/header" title="权限管理" />
+<article class="page-container">
+	<form action="{:U('Role/authorize')}" method="post" class="form form-horizontal" id="form-admin-role-add" style="margin: auto 10%;">
+        <table width="100%" cellspacing="0">
+		{$categorys}
+        </table>
+        <input type="hidden" name="id" value="{$roleid}" />
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+$(function(){
+	$("#form-admin-role-add").validate({
+		rules:{
+			name:{
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit({
+                success:function(data){
+					layer.msg(data.info, {icon:6,time:1000});
+//                    Huimodal_alert(data.info,2000);
+                    if(data.status == 1){
+//                        setTimeout("parent.layer.close(parent.layer.getFrameIndex(window.name));",2000);
+                        setTimeout(function(){
+                            parent.location.reload();
+                        },2000);
+                    }
+                }
+            });
+		}
+	});
+
+	$("tbody tr").each(function(){
+		var nowid = getNum(this.id);
+		if(typeof($(".child-of-node-"+nowid).attr('class')) == "undefined"){
+			$(this).children().children('span').hide();
+			$(this).children('td').css('padding-left','42px');
+		}
+	});
+
+	$("tr[class^='child-of-node-']").css('display','none');
+	$(".Hui-iconfont").click(function(){
+		var pid = getNum($(this).parent().parent('tr').attr('id'));
+		if($(this).attr('class') == 'Hui-iconfont Hui-iconfont-arrow2-right'){
+			$(this).attr('class','Hui-iconfont Hui-iconfont-arrow2-bottom');
+			$(".child-of-node-"+pid).toggle();
+		}else{
+			$(this).attr('class','Hui-iconfont Hui-iconfont-arrow2-right');
+			$(".child-of-node-"+pid).each(function(){
+				$(this).toggle();
+				var now_nid = getNum($(this).attr("id"));
+				$(".child-of-node-"+now_nid).hide();
+			});
+		}
+	});
+});
+
+function getNum(text){
+	var value = text.replace(/[^0-9]/ig,"");
+	return(value);
+}
+function checknode(obj) {
+
+    var chk = $("input[type='checkbox']");
+    var count = chk.length;
+    var num = chk.index(obj);
+    var level_bottom = 0;
+    var level_top = level_bottom = chk.eq(num).attr('level');
+    for (var i = num; i >= 0; i--) {
+        var le = chk.eq(i).attr('level');
+//                alert(eval(le));
+        if (eval(le) < eval(level_top)) {
+            chk.eq(i).prop("checked", true);
+            var level_top = level_top - 1;
+        }
+    }
+    for (var j = num + 1; j < count; j++) {
+        var lev = chk.eq(j).attr('level');
+        if (chk.eq(num).is(':checked')) {
+            if (eval(lev) > eval(level_bottom)){
+                chk.eq(j).prop("checked", true);
+            }
+            else if (eval(lev) == eval(level_bottom)){
+                break;
+            }
+        } else {
+            if (eval(lev) > eval(level_bottom)){
+                chk.eq(j).prop("checked", false);
+            }else if(eval(lev) == eval(level_bottom)){
+                break;
+            }
+        }
+    }
+}
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

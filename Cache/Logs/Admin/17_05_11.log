@@ -1,0 +1,1665 @@
+[ 2017-05-11T17:11:39+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0059s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016539s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2017-05-11T17:11:39+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012852s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013063s ]
+
+[ 2017-05-11T17:11:40+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+
+[ 2017-05-11T17:11:44+08:00 ] 127.0.0.1 /login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `j_admin` [ RunTime:0.0021s ]
+SQL: SELECT m.*,r.name role_name FROM j_admin m LEFT JOIN j_role r on r.id=m.roleid  WHERE m.name = 'admin' LIMIT 1   [ RunTime:0.0099s ]
+SQL: UPDATE `j_admin` SET `login_ip`='127.0.0.1',`login_times`='117' WHERE `id` = 1 [ RunTime:0.0203s ]
+SQL: SHOW COLUMNS FROM `j_log` [ RunTime:0.0026s ]
+SQL: INSERT INTO `j_log` (`username`,`userid`,`roleid`,`rolename`,`title`,`module`,`controller`,`action`,`data`,`ip`,`ctime`) VALUES ('admin','1','4','超级管理员','系统登录','Admin','Login','login','{\"roleid\":\"4\",\"username\":\"admin\",\"password\":\"admin\",\"verify\":\"6911\"}','127.0.0.1','2017-05-11 17:11:44') [ RunTime:0.0039s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020384s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000927s ]
+
+[ 2017-05-11T17:11:45+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0021s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000574s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [2] Division by zero /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001560s ]
+
+[ 2017-05-11T17:11:45+08:00 ] 127.0.0.1 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_user` [ RunTime:0.0022s ]
+SQL: SELECT u.gender,count(*) count FROM j_user u WHERE (  1=1  and u.status = 1 ) GROUP BY u.gender  [ RunTime:0.0042s ]
+SQL: SELECT count(*) count,r.region_name FROM j_user u LEFT JOIN j_region r on r.region_id=u.provid  WHERE (  1=1  and u.status = 1 ) GROUP BY u.provid  [ RunTime:0.0025s ]
+SQL: select nnd,count(*) count from (select case when age<20 then '0-20' when age>=20 and age<30 then '20-30'
+                    when age>=30 and age<40 then '30-40' when age>=40 and age<50 then '40-50'  when age>=50 and age<60 then '50-60'
+                    when age>=60 and age<70 then '60-70' when age>=70 and age<80 then '70-80' when age>=80 and age<90 then '80-90'
+                    when age>=90 and age<100 then '90-100' when age>=100 then '大于100' end as nnd,id from j_user u WHERE  1=1  and u.status = 1)
+                     a group by nnd [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024894s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002107s ]
+
+[ 2017-05-11T17:15:46+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0017s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [2] Division by zero /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001293s ]
+
+[ 2017-05-11T17:15:47+08:00 ] 127.0.0.1 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_user` [ RunTime:0.0013s ]
+SQL: SELECT u.gender,count(*) count FROM j_user u WHERE (  1=1  and u.status = 1 ) GROUP BY u.gender  [ RunTime:0.0015s ]
+SQL: SELECT count(*) count,r.region_name FROM j_user u LEFT JOIN j_region r on r.region_id=u.provid  WHERE (  1=1  and u.status = 1 ) GROUP BY u.provid  [ RunTime:0.0015s ]
+SQL: select nnd,count(*) count from (select case when age<20 then '0-20' when age>=20 and age<30 then '20-30'
+                    when age>=30 and age<40 then '30-40' when age>=40 and age<50 then '40-50'  when age>=50 and age<60 then '50-60'
+                    when age>=60 and age<70 then '60-70' when age>=70 and age<80 then '70-80' when age>=80 and age<90 then '80-90'
+                    when age>=90 and age<100 then '90-100' when age>=100 then '大于100' end as nnd,id from j_user u WHERE  1=1  and u.status = 1)
+                     a group by nnd [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000185s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000971s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001190s ]
+
+[ 2017-05-11T17:15:48+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005061s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0046s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [2] Division by zero /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034966s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002206s ]
+
+[ 2017-05-11T17:15:48+08:00 ] 127.0.0.1 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_user` [ RunTime:0.0011s ]
+SQL: SELECT u.gender,count(*) count FROM j_user u WHERE (  1=1  and u.status = 1 ) GROUP BY u.gender  [ RunTime:0.0007s ]
+SQL: SELECT count(*) count,r.region_name FROM j_user u LEFT JOIN j_region r on r.region_id=u.provid  WHERE (  1=1  and u.status = 1 ) GROUP BY u.provid  [ RunTime:0.0008s ]
+SQL: select nnd,count(*) count from (select case when age<20 then '0-20' when age>=20 and age<30 then '20-30'
+                    when age>=30 and age<40 then '30-40' when age>=40 and age<50 then '40-50'  when age>=50 and age<60 then '50-60'
+                    when age>=60 and age<70 then '60-70' when age>=70 and age<80 then '70-80' when age>=80 and age<90 then '80-90'
+                    when age>=90 and age<100 then '90-100' when age>=100 then '大于100' end as nnd,id from j_user u WHERE  1=1  and u.status = 1)
+                     a group by nnd [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000183s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001316s ]
+
+[ 2017-05-11T17:15:50+08:00 ] 127.0.0.1 /Admin/Product/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_product` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `j_product` WHERE `isdel` = 1 LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `j_product` WHERE `isdel` = 1 ORDER BY ctime desc LIMIT 0,15   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001086s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001241s ]
+
+[ 2017-05-11T17:15:50+08:00 ] 127.0.0.1 /Attachment/image/2017/0429/59042a00d2ee0350-220.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000853s ]
+
+[ 2017-05-11T17:15:51+08:00 ] 127.0.0.1 /Admin/Order/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001840s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_order` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `j_order` WHERE `isdel` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `j_order` WHERE `isdel` = 1 ORDER BY ctime desc LIMIT 0,20   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004161s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004531s ]
+
+[ 2017-05-11T17:15:53+08:00 ] 127.0.0.1 /Admin/Product/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_product` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `j_product` WHERE `isdel` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `j_product` WHERE `isdel` = 1 ORDER BY ctime desc LIMIT 0,15   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000353s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017673s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001136s ]
+
+[ 2017-05-11T17:15:53+08:00 ] 127.0.0.1 /Attachment/image/2017/0429/59042a00d2ee0350-220.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000098s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002609s ]
+
+[ 2017-05-11T17:18:01+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [2] Division by zero /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001193s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001364s ]
+
+[ 2017-05-11T17:18:01+08:00 ] 127.0.0.1 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_user` [ RunTime:0.0011s ]
+SQL: SELECT u.gender,count(*) count FROM j_user u WHERE (  1=1  and u.status = 1 ) GROUP BY u.gender  [ RunTime:0.0008s ]
+SQL: SELECT count(*) count,r.region_name FROM j_user u LEFT JOIN j_region r on r.region_id=u.provid  WHERE (  1=1  and u.status = 1 ) GROUP BY u.provid  [ RunTime:0.0006s ]
+SQL: select nnd,count(*) count from (select case when age<20 then '0-20' when age>=20 and age<30 then '20-30'
+                    when age>=30 and age<40 then '30-40' when age>=40 and age<50 then '40-50'  when age>=50 and age<60 then '50-60'
+                    when age>=60 and age<70 then '60-70' when age>=70 and age<80 then '70-80' when age>=80 and age<90 then '80-90'
+                    when age>=90 and age<100 then '90-100' when age>=100 then '大于100' end as nnd,id from j_user u WHERE  1=1  and u.status = 1)
+                     a group by nnd [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001871s ]
+
+[ 2017-05-11T17:18:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0023s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029368s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2017-05-11T17:18:24+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2017-05-11T17:18:25+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+
+[ 2017-05-11T17:24:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0017s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2017-05-11T17:24:32+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001288s ]
+
+[ 2017-05-11T17:27:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0014s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2017-05-11T17:27:16+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001783s ]
+
+[ 2017-05-11T17:27:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0013s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007820s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2017-05-11T17:27:19+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2017-05-11T17:27:21+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0008s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007925s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000388s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2017-05-11T17:27:21+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2017-05-11T17:27:21+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+
+[ 2017-05-11T17:30:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0027s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000444s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000970s ]
+
+[ 2017-05-11T17:30:44+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2017-05-11T17:30:47+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `j_company` [ RunTime:0.0010s ]
+SQL: SELECT `content` FROM `j_company` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-05-11T17:30:47+08:00 ] 127.0.0.1 /login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000900s ]
+
+[ 2017-05-11T17:35:17+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001161s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001320s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+NOTIC: [2] Division by zero /Users/duyang/www/ShuiMianBao/Cache/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027550s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002451s ]
+
+[ 2017-05-11T17:35:17+08:00 ] 127.0.0.1 /Admin/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined index: admin_menu /Users/duyang/www/ShuiMianBao/App/Admin/Controller/BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `j_menu` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: join /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+NOTIC: [8] Undefined variable: where /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 68 行.
+SQL: SELECT a.* FROM j_menu a ORDER BY a.listorder ASC  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+NOTIC: [8] Undefined index: data /Users/duyang/www/ShuiMianBao/App/Admin/Model/MenuModel.class.php 第 136 行.
+SQL: SHOW COLUMNS FROM `j_user` [ RunTime:0.0024s ]
+SQL: SELECT u.gender,count(*) count FROM j_user u WHERE (  1=1  and u.status = 1 ) GROUP BY u.gender  [ RunTime:0.0008s ]
+SQL: SELECT count(*) count,r.region_name FROM j_user u LEFT JOIN j_region r on r.region_id=u.provid  WHERE (  1=1  and u.status = 1 ) GROUP BY u.provid  [ RunTime:0.0010s ]
+SQL: select nnd,count(*) count from (select case when age<20 then '0-20' when age>=20 and age<30 then '20-30'
+                    when age>=30 and age<40 then '30-40' when age>=40 and age<50 then '40-50'  when age>=50 and age<60 then '50-60'
+                    when age>=60 and age<70 then '60-70' when age>=70 and age<80 then '70-80' when age>=80 and age<90 then '80-90'
+                    when age>=90 and age<100 then '90-100' when age>=100 then '大于100' end as nnd,id from j_user u WHERE  1=1  and u.status = 1)
+                     a group by nnd [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001285s ]
+

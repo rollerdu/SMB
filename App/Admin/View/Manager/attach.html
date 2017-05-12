@@ -1,0 +1,91 @@
+<include file="Public/header" title="分配代理商" />
+<article class="page-container">
+	<form class="form form-horizontal" id="form-admin-add" action="{:U('Manager/attach')}" method="post">
+	<div class="row cl ml-50">
+		<volist name="data" id="da">
+		<div class="formControls col-xs-8 col-sm-3">
+			<input type="checkbox" style="display: inline" class="checkbox" name="agent[]" <if condition="$da['managerid'] eq $managerid ">checked</if> value="{$da.id}" /> {$da.truename}({$da.name}--{$da.region_name})
+		</div>
+		</volist>
+	</div>
+        <input type="hidden" name="id" value="{$managerid}"/>
+	<div class="row cl">
+		<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-4">
+            <if condition="!empty($data)">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <else />
+                <input class="btn btn-success radius" type="button" value="&nbsp;&nbsp;暂无未分配的代理商&nbsp;&nbsp;">
+            </if>
+		</div>
+	</div>
+	</form>
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
+
+<!--/_footer /作为公共模版分离出去--> 
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-add").validate({
+		rules:{
+			name:{
+				required:true,
+				minlength:4,
+				maxlength:16
+			},
+			password:{
+				required:true,
+			},
+			repassword:{
+				required:true,
+				equalTo: "#password"
+			},
+			status:{
+				required:true,
+			},
+			email:{
+				required:true,
+				email:true,
+			},
+			roleid:{
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit({
+				success:function(data){
+					layer.msg(data.info, {icon:6,time:1000});
+					if(data.status == 1){
+//                        setTimeout("parent.layer.close(parent.layer.getFrameIndex(window.name));",2000);
+						setTimeout(function(){
+							parent.location.reload();
+						},2000);
+					}
+				}
+			});
+		}
+	});
+});
+</script> 
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

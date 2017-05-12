@@ -1,0 +1,94 @@
+﻿<include file="Public/header" title="数据备份" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 备份管理
+    <span class="c-gray en">&gt;</span>
+    数据备份
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
+        <i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+
+<article class="page-container">
+	<form class="form form-horizontal" id="form-article-add" action="{:U('Backup/index_post')}" method="post">
+		<div class="tabBar cl"><span>数据备份</span></div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">每个分卷文件大小：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:center">
+				<input type="text" class="input-text" value="{$sizelimit}" placeholder="" name="sizelimit">
+			</div>
+			<div class="form-label col-xs-1 col-sm-2" style="text-align:center">
+			K   (推荐10M以下)
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备份名称：</label>
+			<div class="form-label col-xs-2 col-sm-2" style="text-align:center">
+				<input type="text" class="input-text" value="{$backup_name}" placeholder="" name="backup_name">
+			</div>
+		</div>
+		<div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">备份类型：</label>
+            <div class="form-label col-xs-2 col-sm-2" style="text-align:center">
+                <label><input type="radio" checked="checked" value="full" name="backup_type" onclick="javascript:$('#js-showtables').hide();"> 全部备份</label>
+                <label><input type="radio" value="custom" name="backup_type" onclick="javascript:$('#js-showtables').show();"> 自定义备份</label>
+            </div>
+        </div>
+        <div class="row cl" id="js-showtables" style="display: none">
+            <label class="form-label col-xs-4 col-sm-3">备份名称：</label>
+            <div class="form-label col-xs-2 col-sm-8"style="text-align:left">
+                <volist name="tables" id="val">
+                    <label class="" style="width:200px;"><input name="backup_tables[{$val}]" type="checkbox" value="-1" class="js-checkitem" />&nbsp;&nbsp;{$val}</label>
+                </volist>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-8 col-xs-offset-4 col-sm-offset-3">
+                <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+	</form>
+</article>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery.validation/1.14.0/messages_zh.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+	$(function() {
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+        $("#form-article-add").validate({
+            rules: {
+
+            },
+            onkeyup: false,
+            focusCleanup: true,
+            success: "valid",
+            submitHandler: function (form) {
+                $(form).ajaxSubmit({
+                    success: function (data) {
+                        layer.msg(data.info, {icon: 6, time: 1000});
+                        if (data.status == 1) {
+//                        setTimeout("parent.layer.close(parent.layer.getFrameIndex(window.name));",2000);
+                            setTimeout(function () {
+                                parent.location.reload();
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+        });
+    })
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+<include file="Public/footer" />

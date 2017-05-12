@@ -1,0 +1,157 @@
+﻿<include file="Public/header" title="商品列表" />
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商城管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+         <span class="select-box inline">
+                    <select name="cate_id" class="select">
+                        <option value="0">请选择分类</option>
+                        <volist name=":C('PRODUCT_CATEGORY')" id="vo" key="k">
+                            <option value="{$k}" <if condition="$cate_id eq $k">selected</if> >{$vo}</option>
+                        </volist>
+                    </select>
+                </span>
+		<input type="text" class="input-text" style="width:250px" placeholder="输入商品名称" value="{$title}" id="title">
+		<button type="button" class="btn btn-success" onclick="btn_search()" name=""><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="admin_add('添加商品','{:U('Product/add')}','1200','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong>{$count | default=0}</strong> 条</span> </div>
+	<table class="table table-border table-bordered table-bg">
+		<thead>
+			<tr class="text-c">
+				<th width="40">ID</th>
+				<th width="150">商品名称</th>
+				<th width="100">缩略图</th>
+				<th width="80">分类</th>
+				<th width="60">简介</th>
+				<th width="100">价格</th>
+				<th width="70">库存量</th>
+				<th width="70">销售量</th>
+				<th width="150">创建时间</th>
+				<th width="150">编辑时间</th>
+				<th width="60">状态</th>
+				<th width="150">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<foreach name="data" item="v">
+			<tr class="text-c">
+				<td>{$v.id}</td>
+				<td>{$v.title}</td>
+				<td><img src="{$v.thumb_img}"  height="40"/></td>
+                <td>{:C('PRODUCT_CATEGORY')[$v['cate_id']]}</td>
+                <td><button onclick="layer.alert('{$v.intro}');">查看</button> </td>
+				<td>￥{$v.price}</td>
+				<td>{$v.inventory}</td>
+				<td>{$v.sale_count}</td>
+				<td>{$v.ctime}</td>
+				<td>{$v.etime}</td>
+				<td class="td-status{$v.id}">
+                    <if condition="$v.status eq 1">
+                        <span class="label label-success radius">已上架</span>
+                        <else/>
+                        <span style="color:red">
+                            <span class="label radius">已下架</span>
+                        </span>
+                    </if>
+                </td>
+				<td class="td-manage{$v.id}">
+                    <if condition="$v.status eq 1">
+                    <a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',1,'下架')" title="下架">
+                        <i class="Hui-iconfont">&#xe631;</i>
+                    </a>
+                        <else/>
+                        <a style="text-decoration:none" onClick="admin_stop(this,'{$v.id}',0,'上架')" title="上架">
+                            <i class="Hui-iconfont">&#xe615;</i>
+                        </a>
+                        </if>
+                    <a title="编辑" href="javascript:;" onclick="admin_edit('商品编辑','{:U("Product/edit",array("id"=>$v["id"]))}','1000','500')" class="ml-5" style="text-decoration:none">
+                        <i class="Hui-iconfont">&#xe6df;</i>
+                    </a>
+                    <a title="删除" href="javascript:;" onclick="admin_del(this,'{$v.id}')" class="ml-5" style="text-decoration:none">
+                        <i class="Hui-iconfont">&#xe6e2;</i>
+                    </a>
+                </td>
+			</tr>
+			</foreach>
+		</tbody>
+	</table>
+</div>
+<div class="clearfix"></div>
+{$page}
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+/*
+	参数解释：
+	title	标题
+	url		请求的url
+	id		需要操作的数据id
+	w		弹出层宽度（缺省调默认值）
+	h		弹出层高度（缺省调默认值）
+*/
+/*管理员-增加*/
+function admin_add(title,url,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+function btn_search(){
+    var title = $("#title").val(),cate_id=$(".select").val();
+    window.location.href="{:U('Product/index')}?title="+title+"&cate_id="+cate_id;
+}
+/*-编辑*/
+function admin_edit(title,url,w,h){
+    var index = layer.open({
+        type: 2,
+        title: title,
+        content: url
+    });
+    layer.full(index);
+}
+function admin_del(obj,id){
+    layer.confirm('确认要删除吗？',function(index){
+        $.get("{:U('Product/delete')}",{id:id},function(data){
+            if(data.status == 1){
+                $(obj).parents("tr").remove();
+                layer.msg(data.info, {icon:6,time:1000});
+            }else{
+                layer.msg(data.info, {icon:5,time:1000});
+            }
+        })
+
+    });
+}
+/*商品上下架*/
+function admin_stop(obj,id,status,tit){
+	layer.confirm('确认要'+tit+'吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		var url = "{:U('Product/change_status')}";
+        $.get(url,{id:id},function(data){
+            if(data.status == 1){
+                if(status == 1){
+                    $(obj).remove();
+                    $(".td-manage"+id+"").prepend('<a onClick="admin_stop(this,'+id+',0,'+"'上架'"+')" href="javascript:;" title="上架" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+                    $(".td-status"+id+"").html('<span class="label radius">已下架</span>');
+                    layer.msg('已停用!',{icon: 5,time:1000});
+                }else{
+                    $(obj).remove();
+                    $('.td-manage'+id+'').prepend('<a onClick="admin_stop(this,'+id+',1,'+"'下架'"+')" href="javascript:;" title="下架" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+                    $(".td-status"+id+"").html('<span class="label label-success radius">已上架</span>');
+                    layer.msg('已启用!', {icon: 6,time:1000});
+                }
+            }else{
+                layer.msg(data.info,{icon: 5,time:1000});
+            }
+        });
+
+	});
+}
+
+</script>
+<include file="Public/footer" />
