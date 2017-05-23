@@ -1,4 +1,4 @@
-<?php
+cd<?php
 return array (
 /**
  * Created by PhpStorm.

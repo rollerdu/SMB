@@ -32,6 +32,7 @@ class ProductController extends BaseController{
         $where['status']  = 1;
         $limit = ($page-1)*$this->pageSize;
         $data = $model->where($where)->limit("$limit,$this->pageSize")
+            ->order("etime desc")
             ->field("id,title,intro,price,img,thumb_img,inventory,usage_count,sale_count,cate_id")
             ->select();
         if($data && is_array($data)){
@@ -64,6 +65,7 @@ class ProductController extends BaseController{
         $user_id = I("param.user_id",0,'intval');
         if($this->Checkticket($user_id)){
             $data = M("Cart")->alias('c')->where(array('c.userid'=>$user_id,'p.status'=>1,'p.isdel'=>1))
+                ->order('p.id desc')
                 ->limit("($page-1)*$this->pageSize,$this->pageSize")
                 ->join(C("DB_PREFIX")."product p on p.id=c.productid",'INNER')
                 ->field("c.num cart_num,p.id,p.title,p.intro,p.price,p.thumb_img,p.img,p.inventory,p.usage_count,p.cate_id")

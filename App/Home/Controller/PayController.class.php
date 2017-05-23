@@ -37,6 +37,7 @@ class PayController extends BaseController {
                 $order = M('Order');
                 $s = $order->where(array('trade_sn'=>$out_trade_no))->find();
                 if($s) {
+                    //检测该订单是否已回调成功，防止同一订单多次回调
                     if($s['status'] == 'succ'){
                         echo true;
                         exit;
@@ -75,6 +76,7 @@ class PayController extends BaseController {
                 $s['transaction_id'] = $array['transaction_id'];
                 $s['pay_id']         = 2;
                 $s['pay_name']       = '微信支付';
+                //检测该订单是否已回调成功，防止同一订单多次回调
                 if($s['status'] == 'succ'){
                     echo $obj->ToResultWeixin(array('return_code'=>'SUCCESS','return_msg'=>'OK'));
                     exit;
@@ -95,25 +97,24 @@ class PayController extends BaseController {
     private function editUserOrderInfo($s)
     {
         if(empty($s) && !is_array($s)) return true;
-        //检测该订单是否已回调成功，防止同一订单多次回调
         $order = M("Order");
         $arr  = array('status'=>'succ','pay_id'=>$s['pay_id'],'pay_name'=>$s['pay_name'],'paytime'=>time(),'etime'=>time(),'transaction_id'=>$s['transaction_id']);
         $ret = $order->where(array('trade_sn'=>$s['trade_sn']))->save($arr);
         if($ret){
             $detail = M("OrderDetail")->where(array('trade_sn'=>$s['trade_sn']))->select();
             $count = 0;
+            $product_model = M("Product");
             foreach($detail as $val){
                 if($val['cate_id'] == 3){
                     $count += $val['usage_count']*$val['num'];
                 }
+                $product_model->where(array('id'=>$val['productid']))->setInc('sale_count',$val['num']);
+                if(in_array($val['cate_id'],[1,2,4]) ){
+                    $product_model->where(array('id'=>$val['productid']))->setDec('inventory',$val['num']);
+                }
             }
             M("GirdleTime")->where(array('userid'=>$s['userid']))->setInc('times',$count);
 
-            $detail = M("OrderDetail")->where(array('trade_sn'=>$s['trade_sn']))->field("productid,num")->select();
-            $product_model = M("Product");
-            foreach($detail as $v){
-                $product_model->where(array('id'=>$v['productid']))->setInc('sale_count',$v['num']);
-            }
             return true;
         }else{
             return false;

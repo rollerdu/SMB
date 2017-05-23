@@ -15,10 +15,10 @@ class WxPayConfig
 	 * APPSECRET：公众帐号secert（仅JSAPI支付的时候需要配置）
 	 * @var string
 	 */
-	const APPID = 'wx3e4e8ab456836514';
-	const MCHID = '1233727902';
+	const APPID = 'wxee9c6b2d40021438';
+	const MCHID = '1480111222';
 	const KEY = '010cea55f7a6173dea07445941197fc5';
-	const APPSECRET = 'ed488c9f323cf6182299e26adfa745b0';
+	const APPSECRET = '1aca2fc341d12ebb6e9d2265db56ace5';
 	
 	//=======【证书路径设置】=====================================
 	/**
